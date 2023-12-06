@@ -34,10 +34,15 @@ $(document).ready(function() {
         var li = document.createElement("li");
         li.textContent = searcharray[i];
         searchHistory.appendChild(li);
+        $(li).on("click", function(){
+            textContent = $(this).text();
+            console.log(textContent);
+            searchInput.value = textContent;
+        });
     }
     
     console.log(searcharray);
-    $("#search-button").on("click", function(){
+    $("#search-button").on("click", function(search){
         searcharray.push(searchInput.value);
         searchInput.value = "";
         localStorage.setItem("searcharray", JSON.stringify(searcharray));
