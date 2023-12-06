@@ -28,10 +28,14 @@ var lat = '';
 var lon = '';
 
 $(document).ready(function() {
-
+    var searcharray = JSON.parse(localStorage.getItem("searcharray")) ||[];
+    console.log(searcharray);
     $("#search-button").on("click", function(){
+        searcharray.push(searchInput.value);
+        localStorage.setItem("searcharray", JSON.stringify(searcharray));
         console.log("button clicked");
-    }
-);
+        console.log(searcharray);
+        console.log(searchInput.value);
+    });
 
 });
