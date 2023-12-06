@@ -29,13 +29,27 @@ var lon = '';
 
 $(document).ready(function() {
     var searcharray = JSON.parse(localStorage.getItem("searcharray")) ||[];
+    searchHistory.innerHTML = JSON.parse(localStorage.getItem("searchHistory")) || []
+    for (var i = 0; i < searcharray.length; i++) {
+        var li = document.createElement("li");
+        li.textContent = searcharray[i];
+        searchHistory.appendChild(li);
+    }
+    
     console.log(searcharray);
     $("#search-button").on("click", function(){
         searcharray.push(searchInput.value);
+        searchInput.value = "";
         localStorage.setItem("searcharray", JSON.stringify(searcharray));
         console.log("button clicked");
         console.log(searcharray);
         console.log(searchInput.value);
+        searchHistory.innerHTML = JSON.parse(localStorage.getItem("searchHistory")) || []
+        for (var i = 0; i < searcharray.length; i++) {
+            var li = document.createElement("li");
+            li.textContent = searcharray[i];
+            searchHistory.appendChild(li);
+        }
     });
 
 });
