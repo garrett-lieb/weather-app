@@ -10,3 +10,6 @@
 // get lat and lon from geocode api
 // use lat and lon to get weather data from weather api
 // display weather data on page
+
+var location = document.querySelector("searchInput");
+var searchBtn = document.querySelector("#searchBtn");
