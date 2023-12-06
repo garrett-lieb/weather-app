@@ -13,8 +13,8 @@
       crossorigin="anonymous">
     </script>
     
-    <body class="grid grid-cols-8">
-        <header class="col-span-8 bg-blue-700 flex flex-column justify-center align-middle py-5">
+    <body class="grid-template-columns: repeat(8, minmax(0, 1fr)); flex flex-column">
+        <header class="col-span-8 bg-blue-700 flex flex-column justify-center align-middle px-5 py-5">
             <h1 class="text-3xl font-bold font-serif text-yellow-300">5
                 <span class="text-3xl font-bold font-serif text-slate-100">Day Weather</span>
                 <span class="text-3xl font-bold font-serif text-slate-300"> Forecast</span>
@@ -23,21 +23,21 @@
         
         
         <card class="col-start-1 col-span-3 flex flex-column justify-left aling-left bg-red-300 px-5 py-5">
-            <h2 class="font-bold font-serif px-5">Search for a City</h2>
+            <h2 class="font-bold font-serif px-5">Search for a City, State</h2>
             <input class="px-5" id="search-input" type="text" placeholder="City Name" />
           <button class="bg-blue-700 rounded-lg text-slate-300 px-5" id="search-button">Search</button>
         </card>
 
-        <card class="col-start-4 col-span-5 flex flex-column justify-left aling-left bg-red-300 px-5 py-5">
+        <card class="col-start-1 col-span-5 flex flex-column justify-left aling-left bg-red-300 px-5 py-5">
             <h2 class="font-bold font-serif px-5">Search History</h2>
-            <ul class="px-5" id="history"></ul>
+            <ul class="px-5" id="search-history"></ul>
         </card>
 
-        <main class="col-start-3 col-span-5" id="5dayforecast">
-            <div id="current results">
+        <main class="col-start-3 col-span-5" id="weather">
+            <div id="current-weather">
                 
             </div>
-            <div id="5dayresults">
+            <div id="five-day-forecast">
             <!-- use modals to create cards for each day -->
             </div>
         </main>

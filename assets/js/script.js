@@ -11,5 +11,27 @@
 // use lat and lon to get weather data from weather api
 // display weather data on page
 
-var location = document.querySelector("searchInput");
-var searchBtn = document.querySelector("#searchBtn");
+// get city name from user input
+// get state from user input
+
+
+const searchButton = $('#search-button');
+
+var searchInput = document.querySelector('#search-input');
+var searchHistory = document.querySelector('#search-history');
+var currentWeather = document.querySelector('#current-weather');
+var fivedayForecast = document.querySelector('#five-day-forecast');
+
+var city = '';
+var state = '';
+var lat = '';
+var lon = '';
+
+$(document).ready(function() {
+
+    $("#search-button").on("click", function(){
+        console.log("button clicked");
+    }
+);
+
+});
