@@ -13,7 +13,7 @@
       crossorigin="anonymous">
     </script>
 </head>
-    <body>
+    <body class="col-span-8">
         <header class="col-span-8 bg-blue-700 flex flex-column justify-center align-middle px-5 py-5">
             <h1 class="text-3xl font-bold font-serif text-yellow-300">5
                 <span class="text-3xl font-bold font-serif text-slate-100">Day Weather</span>
@@ -28,18 +28,23 @@
           <button class="bg-blue-700 rounded-lg text-slate-300 px-5 pm-5" id="search-button">Search</button>
         </card>
 
-        <card class="col-start-1 col-end-2 w-1/4 flex flex-row justify-left aling-left bg-red-500 text-white px-5 py-5">
+        <card class="col-start-1 col-end-2 flex flex-row justify-left aling-left bg-red-500 text-white px-5 py-5">
             <h2 class="font-bold font-serif px-5">Recent Searches</h2>
             <ul class="font-bold underline text-blue-400 px-5" id="search-history"></ul>
+        
+            <div class="col-start-3 w-3/4 justify-center aling-center bg-blue-500 text-white px-5 py-5"
+            id="current-weather">
+             <p>current weather</p> 
+                </div>
+
         </card>
 
-        <main class="col-start-3 col-span-5 bg blue-200" id="weather">
-            <div id="current-weather">
-            
-            </div>
+        <main class="flex flex-row justify-center align-middle bg-blue-200 px-5 py-5"
+                id="weather">
+        <div class="col-start-3 col-span-5 w-3/4 flex flex-row bg-blue-200"
+                id="five-day-forecast">
+            <p>five day forecast</p>
 
-            <div id="five-day-forecast">
-            </div>
         </main>
 
         <script src="./assets/js/script.js"></script>
