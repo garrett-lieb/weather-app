@@ -29,19 +29,24 @@ $(document).ready(function() {
         li.style.cursor = "pointer";
         li.style.backgroundColor = "lightgrey";
         li.style.margin = "5px";
-        li.style.padding = "5px";
+        li.style.padding = "10px";
         li.style.borderRadius = "5px";
         li.style.textAlign = "center";
+        li.style.boxShadow = "5px 5px 10px grey";
         $(li).on("click", function(){
             textContent = $(this).text();
             console.log(textContent);
             searchInput.value = textContent;
         });
     }
-    
     console.log(searcharray);
+
+    // get city name from user input
     $("#search-button").on("click", function(){
         searcharray.push(searchInput.value);
+        if (searchInput.value === "") {
+            return;
+        }
         searchInput.value = "";
         localStorage.setItem("searcharray", JSON.stringify(searcharray));
         console.log("button clicked");
@@ -56,9 +61,10 @@ $(document).ready(function() {
             li.style.cursor = "pointer";
             li.style.backgroundColor = "lightgrey";
             li.style.margin = "5px";
-            li.style.padding = "5px";
+            li.style.padding = "10px";
             li.style.borderRadius = "5px";
             li.style.textAlign = "center";
+            li.style.boxShadow = "5px 5px 10px grey";
         }
     });
  
