@@ -25,12 +25,13 @@ $(document).ready(function() {
     searchHistory.innerHTML = JSON.parse(localStorage.getItem("searchHistory")) || []
 
     function displayTime() {
-        var rightNow = dayjs().format('MMM DD, YYYY [at] hh:mm:ss A');
+        var rightNow = dayjs().format('MMM DD, YYYY [at] hh:mm A');
         var dayofweek = dayjs().format('dddd');
         currentDay.text(rightNow + " " + dayofweek);
       }
       displayTime();
       setInterval(displayTime, 1000);
+      
    
     for (var i = 0; i < searcharray.length; i++) {
         var li = document.createElement("li");
