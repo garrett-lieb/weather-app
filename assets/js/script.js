@@ -10,6 +10,8 @@ var searchInput = document.querySelector('#search-input');
 var searchHistory = document.querySelector('#search-history');
 var currentWeather = document.querySelector('#current-weather');
 var fivedayForecast = document.querySelector('#five-day-forecast');
+var currentHour = dayjs().format("H");
+var currentDay = $('#current-day');
 
 var city = '';
 var state = '';
@@ -21,6 +23,14 @@ $(document).ready(function() {
     //display search history in list on page
     var searcharray = JSON.parse(localStorage.getItem("searcharray")) ||[];
     searchHistory.innerHTML = JSON.parse(localStorage.getItem("searchHistory")) || []
+
+    function displayTime() {
+        var rightNow = dayjs().format('MMM DD, YYYY [at] hh:mm:ss A');
+        var dayofweek = dayjs().format('dddd');
+        currentDay.text(rightNow + " " + dayofweek);
+      }
+      displayTime();
+      setInterval(displayTime, 1000);
    
     for (var i = 0; i < searcharray.length; i++) {
         var li = document.createElement("li");

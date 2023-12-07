@@ -14,27 +14,30 @@
     </script>
 </head>
     <body class="col-span-8" id="body">
-        <header class="col-span-8 bg-blue-700 flex flex-column justify-center align-middle rounded-lg px-5 py-5">
+        <header class="col-span-8 bg-blue-700 flex justify-center align-middle rounded-lg px-5 py-5">
             <h1 class="text-3xl font-bold font-serif text-yellow-300">5
                 <span class="text-3xl font-bold font-serif text-slate-100">Day Weather</span>
                 <span class="text-3xl font-bold font-serif text-slate-300"> Forecast</span>
             </h1>
         </header>
-        
+
     
-        <card class="col-start-1 col-span-3 flex flex-column justify-center aling-center bg-yellow-600 rounded-lg px-5 py-5">
-            <h2 class="font-bold font-serif px-5">Search for a City, State</h2>
+        <card class="col-start-1 col-span-3 flex flex-column justify-center aling-center 
+                    bg-slate-600  rounded-lg px-5 py-5">
+            <h2 class="font-bold font-serif text-white px-5">Search for a City, State</h2>
             <input class="px-5" id="search-input" type="text" placeholder="City Name, State" />
-          <button class="bg-blue-700 rounded-lg text-slate-300 px-5 pm-5" id="search-button">Search</button>
+          <button class="bg-blue-700 rounded-lg text-slate-300 px-5 mx-5" id="search-button">Search</button>
         </card>
 
-        <card class="col-start-1 col-end-1 flex flex-row justify-left aling-left bg-red-500 rounded-lg text-white px-5 py-5">
+        <card class="col-start-1 col-end-1 flex flex-row justify-left aling-left 
+                    bg-green-200 rounded-lg border-double border-4 border-sky-500 px-5 py-5">
             <h2 class="font-bold font-serif px-5">Recent Searches</h2>
             <ol class="col-start-1 col-end-2 underline text-blue-400 px-5" id="search-history">
                 <li class=""></li>
             </ol>
         
-            <div class="col-start-3 w-1/4justify-center aling-center bg-blue-500 rounded-xl text-white px-5 py-5"
+            <div class="col-start-3 w-1/4justify-center aling-center 
+                        bg-blue-500 rounded-xl border-double border-4 border-sky-500 text-white px-5 py-5"
             id="current-weather">
                 <h2 class="font-bold font-serif text-3xl px-5 py-5">Current Weather</h2>
                 <ol>
@@ -46,21 +49,30 @@
                     <li>UV Index: <span id="uv-index"></span></li>
                 </ol>
                 </div>
-            <div class="col-start-4 w-1/4 justify-center aling-center bg-blue-500 rounded-lg text-white">
+            <div class="col-start-4 w-1/4 justify-center aling-center 
+                        bg-blue-500 rounded-lg border-double border-4 border-sky-500 text-white">
                 <!--image for current weather?-->
             </div>
         </card>
 
-        <card class="flex flex-row justify-left align-middle bg-blue-200 rounded-lg px-5 py-5"
+        <card class="flex flex-row justify-left align-middle
+                        bg-blue-200 rounded-lg border-double border-4 border-sky-500 px-5 py-5"
                 id="future-weather">
         <div class="col-start-3 col-span-5 w-3/4 vh-40 flex flex-row rounded-lg bg-blue-200"
                 id="five-day-forecast">
             <h3 class="font-bold font-serif px-5">5-Day Forecast</h3>
                 <!-- 5 day forecast cards that appear when search button is clicked and conditions are met-->
         </div>
-
+        <div class="flex justify-items-end text-white"><p id="current-day"></p></div>
         </card>
-
+        
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script
+          src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+          integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+          crossorigin="anonymous"
+        ></script>
         <script src="./assets/js/script.js"></script>
     </body>
 </html>
