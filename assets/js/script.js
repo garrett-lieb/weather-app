@@ -82,6 +82,9 @@ $(document).ready(function() {
 
 
 // get city name from user input
+city = searchInput.value;
+console.log(city);
+
 // get state from user input?
 
 // base url should look like: 
