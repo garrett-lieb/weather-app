@@ -1,6 +1,3 @@
-/// 
-// weather api key 4111bc800396525093c9185f5d31c8cb
-
 // base url should look like: 
 // https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={4111bc800396525093c9185f5d31c8cb}
 
