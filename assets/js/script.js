@@ -28,10 +28,12 @@ var lat = '';
 var lon = '';
 
 $(document).ready(function() {
+
+    //display search history in list on page
     var searcharray = JSON.parse(localStorage.getItem("searcharray")) ||[];
     searchHistory.innerHTML = JSON.parse(localStorage.getItem("searchHistory")) || []
-    //changed this to only show the last 5 searches
-    for (var i = (searcharray.length-5); i < searcharray.length; i++) {
+    //change this to only show the last 5 searches?
+    for (var i = (searcharray.length - 5); i < searcharray.length; i++) {
         var li = document.createElement("li");
         li.textContent = searcharray[i];
         searchHistory.appendChild(li);
@@ -51,8 +53,8 @@ $(document).ready(function() {
         console.log(searcharray);
         console.log(searchInput.value);
         searchHistory.innerHTML = JSON.parse(localStorage.getItem("searchHistory")) || []
-        // this still shows all the searches, not just the last 5
-        for (var i = 0; i < searcharray.length; i++) {
+        
+        for (var i = (searcharray.length - 5); i < searcharray.length; i++) {
             var li = document.createElement("li");
             li.textContent = searcharray[i];
             searchHistory.appendChild(li);
