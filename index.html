@@ -32,21 +32,31 @@
             <h2 class="font-bold font-serif px-5">Recent Searches</h2>
             <ul class="font-bold underline text-blue-400 px-5" id="search-history"></ul>
         
-            <div class="col-start-3 w-3/4 justify-center aling-center bg-blue-500 text-white px-5 py-5"
+            <div class="col-start-3 w-1/4justify-center aling-center bg-blue-500 text-white px-5 py-5"
             id="current-weather">
-                <h2 class="font-bold font-serif px-5">Current Weather</h2>
-                <p>current weather</p>
+                <h2 class="font-bold font-serif text-3xl px-5 py-5">Current Weather</h2>
+                <ol>
+                    <li>City: <span id="city-name"></span></li>
+                    <li>Temperature: <span id="temperature"></span></li>
+                    <li>Humidity: <span id="humidity"></span></li>
+                    <li>Wind Speed: <span id="wind-speed"></span></li>
+                    <li>UV Index: <span id="uv-index"></span></li>
+                </ol>
                 </div>
-
+            <div class="col-start-4 w-1/4 justify-center aling-center bg-blue-500 text-white">
+                <!--image for current weather?-->
+            </div>
         </card>
 
-        <main class="flex flex-row justify-center align-middle bg-blue-200 px-5 py-5"
-                id="weather">
+        <card class="flex flex-row justify-left align-middle bg-blue-200 px-5 py-5"
+                id="future-weather">
         <div class="col-start-3 col-span-5 w-3/4 flex flex-row bg-blue-200"
                 id="five-day-forecast">
-            <p>five day forecast</p>
+            <h3 class="font-bold font-serif px-5">5-Day Forecast</h3>
+            
+        </div>
 
-        </main>
+        </card>
 
         <script src="./assets/js/script.js"></script>
     </body>

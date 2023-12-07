@@ -1,15 +1,7 @@
-// base url should look like: 
-// 'http://api.openweathermap.org/geo/1.0/direct?q={CITY}&limit=5&appid=4111bc800396525093c9185f5d31c8cb' 
 
-//goecode url should look like:
-// http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={4111bc800396525093c9185f5d31c8cb}
-
-// get lat and lon from geocode api
-// use lat and lon to get weather data from weather api
-// display weather data on page
 
 // get city name from user input
-// get state from user input
+// get state from user input?
 
 
 const searchButton = $('#search-button');
@@ -29,7 +21,7 @@ $(document).ready(function() {
     //display search history in list on page
     var searcharray = JSON.parse(localStorage.getItem("searcharray")) ||[];
     searchHistory.innerHTML = JSON.parse(localStorage.getItem("searchHistory")) || []
-    //change this to only show the last 5 searches?
+   
     for (var i = 0; i < searcharray.length; i++) {
         var li = document.createElement("li");
         li.textContent = searcharray[i];
@@ -69,5 +61,27 @@ $(document).ready(function() {
             li.style.textAlign = "center";
         }
     });
+ 
+
+
+// get city name from user input
+// get state from user input?
+
+// base url should look like: 
+// 'http://api.openweathermap.org/geo/1.0/direct?q={CITY}&limit=5&appid=4111bc800396525093c9185f5d31c8cb' 
+
+// goecode url should look like:
+// http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={4111bc800396525093c9185f5d31c8cb}
+
+// five day forecast url should look like:
+// api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=4111bc800396525093c9185f5d31c8cb
+
+// get lat and lon from geocode api
+// use lat and lon to get weather data from weather api
+// display weather data on page
+
+
+
+
 
 });
