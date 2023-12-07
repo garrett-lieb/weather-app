@@ -33,10 +33,16 @@ $(document).ready(function() {
     var searcharray = JSON.parse(localStorage.getItem("searcharray")) ||[];
     searchHistory.innerHTML = JSON.parse(localStorage.getItem("searchHistory")) || []
     //change this to only show the last 5 searches?
-    for (var i = (searcharray.length - 5); i < searcharray.length; i++) {
+    for (var i = 0; i < searcharray.length; i++) {
         var li = document.createElement("li");
         li.textContent = searcharray[i];
         searchHistory.appendChild(li);
+        li.style.cursor = "pointer";
+        li.style.backgroundColor = "lightgrey";
+        li.style.margin = "5px";
+        li.style.padding = "5px";
+        li.style.borderRadius = "5px";
+        li.style.textAlign = "center";
         $(li).on("click", function(){
             textContent = $(this).text();
             console.log(textContent);
@@ -54,10 +60,16 @@ $(document).ready(function() {
         console.log(searchInput.value);
         searchHistory.innerHTML = JSON.parse(localStorage.getItem("searchHistory")) || []
         
-        for (var i = (searcharray.length - 5); i < searcharray.length; i++) {
+        for (var i = 0; i < searcharray.length; i++) {
             var li = document.createElement("li");
             li.textContent = searcharray[i];
             searchHistory.appendChild(li);
+            li.style.cursor = "pointer";
+            li.style.backgroundColor = "lightgrey";
+            li.style.margin = "5px";
+            li.style.padding = "5px";
+            li.style.borderRadius = "5px";
+            li.style.textAlign = "center";
         }
     });
 
