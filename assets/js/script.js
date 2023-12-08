@@ -18,21 +18,21 @@ var state = '';
 var lat = '';
 var lon = '';
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     //display search history in list on page
-    var searcharray = JSON.parse(localStorage.getItem("searcharray")) ||[];
+    var searcharray = JSON.parse(localStorage.getItem("searcharray")) || [];
     searchHistory.innerHTML = JSON.parse(localStorage.getItem("searchHistory")) || []
 
     function displayTime() {
         var rightNow = dayjs().format('hh:mm A MMM DD, YYYY');
         var dayofweek = dayjs().format('dddd');
         currentDay.text(rightNow + " " + dayofweek);
-      }
-      displayTime();
-      setInterval(displayTime, 1000);
-      
-   
+    }
+    displayTime();
+    setInterval(displayTime, 1000);
+
+
     for (var i = 0; i < searcharray.length; i++) {
         var li = document.createElement("li");
         li.textContent = searcharray[i];
@@ -44,7 +44,7 @@ $(document).ready(function() {
         li.style.borderRadius = "5px";
         li.style.textAlign = "center";
         li.style.boxShadow = "5px 5px 10px grey";
-        $(li).on("click", function(){
+        $(li).on("click", function () {
             textContent = $(this).text();
             console.log(textContent);
             searchInput.value = textContent;
@@ -53,20 +53,20 @@ $(document).ready(function() {
     console.log(searcharray);
 
     // get city name from user input
-    $("#search-button").on("click", function(){
+    $("#search-button").on("click", function () {
         searcharray.push(searchInput.value);
         let city = searchInput.value;
         console.log(city);
         if (searchInput.value === "") {
             return;
         }
+        console.log(searchInput.value);
         searchInput.value = "";
         localStorage.setItem("searcharray", JSON.stringify(searcharray));
         console.log("button clicked");
         console.log(searcharray);
-        console.log(searchInput.value);
         searchHistory.innerHTML = JSON.parse(localStorage.getItem("searchHistory")) || []
-        
+
         for (var i = 0; i < searcharray.length; i++) {
             var li = document.createElement("li");
             li.textContent = searcharray[i];
@@ -79,38 +79,44 @@ $(document).ready(function() {
             li.style.textAlign = "center";
             li.style.boxShadow = "5px 5px 10px grey";
         }
-        
-    // get city name from user input
-    function getWeather() {
-        // define response
-        var requestURL = 'http://api.openweathermap.org/geo/1.0/zip?zip=searchInput&appid=4111bc800396525093c9185f5d31c8cb'
-        // 'http://api.openweathermap.org/geo/1.0/direct?q=searchInput&limit=5&appid=4111bc800396525093c9185f5d31c8cb'
-        
-        let response = fetch(requestURL)
-        .then(function (response) {
-            return response.json();
-        })
-        console.log(response);
-   
-    // // get lat and lon from geocode api
-    // let lat = response.lat;
-    // let lon = response.lon;
-    // console.log(lat);
-    // console.log(lon);
-    // // use lat and lon to get weather data from weather api
-    // let requestURL2 ='api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=4111bc800396525093c9185f5d31c8cb'
-    // fetch(requestURL2)
-    // .then(function (response) {
-    //     return response.json();
-    // })
-    // console.log(response);
-    // // display weather data on page
-    
-    }
-    getWeather();
+
+        // get city name from user input
+        function getWeather() {
+            // define response
+            var requestURL = 'https://api.openweathermap.org/geo/1.0/direct?q='+city+'&limit=5&appid=4111bc800396525093c9185f5d31c8cb'
+            // 'http://api.openweathermap.org/geo/1.0/zip?zip=searchInput&appid=4111bc800396525093c9185f5d31c8cb'
+
+            fetch(requestURL)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+
+                    console.log(data);
+
+                    // get lat and lon from geocode api
+                    let lat = data[0].lat;
+                    let lon = data[0].lon;
+                    console.log(lat);
+                    console.log(lon);
+                    // use lat and lon to get weather data from weather api
+                    let requestURL2 = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=4111bc800396525093c9185f5d31c8cb`
+                    fetch(requestURL2)
+                        .then(function (response) {
+                            return response.json();
+                        })
+                        .then (function(data){
+                            console.log(data);
+                        })
+                    
+                });
+
+        }
+        getWeather();
+    });
+
 });
-    
-});
+// // display weather data on page
 
 // base url should look like: 
 // 'http://api.openweathermap.org/geo/1.0/direct?q={searchInput}&limit=5&appid=4111bc800396525093c9185f5d31c8cb' 
