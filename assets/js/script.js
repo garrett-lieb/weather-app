@@ -55,6 +55,8 @@ $(document).ready(function() {
     // get city name from user input
     $("#search-button").on("click", function(){
         searcharray.push(searchInput.value);
+        let city = searchInput.value;
+        console.log(city);
         if (searchInput.value === "") {
             return;
         }
@@ -77,28 +79,24 @@ $(document).ready(function() {
             li.style.textAlign = "center";
             li.style.boxShadow = "5px 5px 10px grey";
         }
+        
+    // get city name from user input
+    // get state from user input?
+    // get lat and lon from geocode api
+    // use lat and lon to get weather data from weather api
+    // display weather data on page
     });
  
-
-
-// get city name from user input
-city = searchInput.value;
-console.log(city);
-
-// get state from user input?
 
 // base url should look like: 
 // 'http://api.openweathermap.org/geo/1.0/direct?q={CITY}&limit=5&appid=4111bc800396525093c9185f5d31c8cb' 
 
 // goecode url should look like:
-// http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={4111bc800396525093c9185f5d31c8cb}
+// 'http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid=4111bc800396525093c9185f5d31c8cb'
 
 // five day forecast url should look like:
-// api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=4111bc800396525093c9185f5d31c8cb
+// 'api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=4111bc800396525093c9185f5d31c8cb'
 
-// get lat and lon from geocode api
-// use lat and lon to get weather data from weather api
-// display weather data on page
 
 
 
