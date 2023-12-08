@@ -108,7 +108,7 @@ $(document).ready(function () {
                         .then (function(data){
                             console.log(data);
                         })
-                    // data[0]=today, data[1]=tomorrow, data[2]=day after tomorrow, etc.
+                    
                     // assign data [0] to current weather field
                     // assign data [5] to day 1 field
                     // assign data [13] to day 2 field
@@ -123,7 +123,7 @@ $(document).ready(function () {
     });
 
 });
-// // display weather data on page
+
 
 // base url should look like: 
 // 'http://api.openweathermap.org/geo/1.0/direct?q={searchInput}&limit=5&appid=4111bc800396525093c9185f5d31c8cb' 
