@@ -82,7 +82,8 @@ $(document).ready(function() {
         
     // get city name from user input
     function getWeather() {
-        var requestURL = 'http://api.openweathermap.org/geo/1.0/direct?q={searchInput}&limit=5&appid=4111bc800396525093c9185f5d31c8cb' 
+        // define response
+        var requestURL = 'http://api.openweathermap.org/geo/1.0/direct?q=searchInput&limit=5&appid=4111bc800396525093c9185f5d31c8cb' 
         fetch(requestURL)
         .then(function (response) {
             return response.json();
