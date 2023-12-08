@@ -81,25 +81,40 @@ $(document).ready(function() {
         }
         
     // get city name from user input
+    function getWeather() {
+        var requestURL = 'http://api.openweathermap.org/geo/1.0/direct?q={searchInput}&limit=5&appid=4111bc800396525093c9185f5d31c8cb' 
+        fetch(requestURL)
+        .then(function (response) {
+            return response.json();
+        })
+        console.log(response);
+    }
+    
     // get state from user input?
     // get lat and lon from geocode api
+    let lat = response.lat;
+    let lon = response.lon;
+    console.log(lat);
+    console.log(lon);
     // use lat and lon to get weather data from weather api
+    let requestURL2 ='api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=4111bc800396525093c9185f5d31c8cb'
+    fetch(requestURL2)
+    .then(function (response) {
+        return response.json();
+    })
+    console.log(response);
     // display weather data on page
+    getWeather();
+
     });
- 
+    
+});
 
 // base url should look like: 
-// 'http://api.openweathermap.org/geo/1.0/direct?q={CITY}&limit=5&appid=4111bc800396525093c9185f5d31c8cb' 
+// 'http://api.openweathermap.org/geo/1.0/direct?q={searchInput}&limit=5&appid=4111bc800396525093c9185f5d31c8cb' 
 
 // goecode url should look like:
 // 'http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid=4111bc800396525093c9185f5d31c8cb'
 
 // five day forecast url should look like:
 // 'api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=4111bc800396525093c9185f5d31c8cb'
-
-
-
-
-
-
-});
