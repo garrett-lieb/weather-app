@@ -120,12 +120,12 @@ $(document).ready(function () {
                             console.log(data);
                         })
                     
-                    // assign data [0] to current weather field
-                    // assign data [5] to day 1 field
-                    // assign data [13] to day 2 field
-                    // assign data [21] to day 3 field
-                    // assign data [29] to day 4 field
-                    // assign data [37] to day 5 field
+                    
+                    // assign data [4] to day 1 field
+                    // assign data [12] to day 2 field
+                    // assign data [20] to day 3 field
+                    // assign data [28] to day 4 field
+                    // assign data [36] to day 5 field
                     
                 });
 
