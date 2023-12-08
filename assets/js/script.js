@@ -90,8 +90,7 @@ $(document).ready(function() {
         })
         console.log(response);
    
-    // get state from user input?
-    // get lat and lon from geocode api
+    // // get lat and lon from geocode api
     // let lat = response.lat;
     // let lon = response.lon;
     // console.log(lat);
