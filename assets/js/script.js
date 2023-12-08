@@ -84,7 +84,7 @@ $(document).ready(function() {
     function getWeather() {
         // define response
         var requestURL = 'http://api.openweathermap.org/geo/1.0/direct?q=searchInput&limit=5&appid=4111bc800396525093c9185f5d31c8cb' 
-        fetch(requestURL)
+        let response = fetch(requestURL)
         .then(function (response) {
             return response.json();
         })
@@ -92,18 +92,18 @@ $(document).ready(function() {
    
     // get state from user input?
     // get lat and lon from geocode api
-    let lat = response.lat;
-    let lon = response.lon;
-    console.log(lat);
-    console.log(lon);
-    // use lat and lon to get weather data from weather api
-    let requestURL2 ='api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=4111bc800396525093c9185f5d31c8cb'
-    fetch(requestURL2)
-    .then(function (response) {
-        return response.json();
-    })
-    console.log(response);
-    // display weather data on page
+    // let lat = response.lat;
+    // let lon = response.lon;
+    // console.log(lat);
+    // console.log(lon);
+    // // use lat and lon to get weather data from weather api
+    // let requestURL2 ='api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=4111bc800396525093c9185f5d31c8cb'
+    // fetch(requestURL2)
+    // .then(function (response) {
+    //     return response.json();
+    // })
+    // console.log(response);
+    // // display weather data on page
     
     }
     getWeather();
