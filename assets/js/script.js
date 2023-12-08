@@ -83,10 +83,10 @@ $(document).ready(function () {
         // get city name from user input
         function getWeather() {
             // define response
-            var requestURL = 'https://api.openweathermap.org/geo/1.0/direct?q='+city+'&limit=5&appid=4111bc800396525093c9185f5d31c8cb'
+            var requestURLcity = 'https://api.openweathermap.org/geo/1.0/direct?q='+city+'&limit=5&appid=4111bc800396525093c9185f5d31c8cb'
             // 'http://api.openweathermap.org/geo/1.0/zip?zip=searchInput&appid=4111bc800396525093c9185f5d31c8cb'
 
-            fetch(requestURL)
+            fetch(requestURLcity)
                 .then(function (response) {
                     return response.json();
                 })
@@ -100,12 +100,23 @@ $(document).ready(function () {
                     console.log(lat);
                     console.log(lon);
                     // use lat and lon to get weather data from weather api
-                    let requestURL2 = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=4111bc800396525093c9185f5d31c8cb`
-                    fetch(requestURL2)
+                    let requestURLcurrent = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=4111bc800396525093c9185f5d31c8cb`
+                    fetch(requestURLcurrent)
                         .then(function (response) {
                             return response.json();
                         })
                         .then (function(data){
+                            // ------today's weather------
+                            console.log(data);
+                        })
+
+                    let requestURL5day = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=4111bc800396525093c9185f5d31c8cb`
+                    fetch(requestURL5day)
+                        .then(function (response) {
+                            return response.json();
+                        })
+                        .then (function(data){
+                            // ------five day forecast------
                             console.log(data);
                         })
                     
