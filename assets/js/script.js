@@ -108,6 +108,13 @@ $(document).ready(function () {
                         .then (function(data){
                             console.log(data);
                         })
+                    // data[0]=today, data[1]=tomorrow, data[2]=day after tomorrow, etc.
+                    // assign data [0] to current weather field
+                    // assign data [5] to day 1 field
+                    // assign data [13] to day 2 field
+                    // assign data [21] to day 3 field
+                    // assign data [29] to day 4 field
+                    // assign data [37] to day 5 field
                     
                 });
 
