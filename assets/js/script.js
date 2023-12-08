@@ -88,8 +88,7 @@ $(document).ready(function() {
             return response.json();
         })
         console.log(response);
-    }
-    
+   
     // get state from user input?
     // get lat and lon from geocode api
     let lat = response.lat;
@@ -104,9 +103,10 @@ $(document).ready(function() {
     })
     console.log(response);
     // display weather data on page
+    
+    }
     getWeather();
-
-    });
+});
     
 });
 
