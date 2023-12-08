@@ -25,7 +25,7 @@ $(document).ready(function() {
     searchHistory.innerHTML = JSON.parse(localStorage.getItem("searchHistory")) || []
 
     function displayTime() {
-        var rightNow = dayjs().format('MMM DD, YYYY [at] hh:mm A');
+        var rightNow = dayjs().format('hh:mm A MMM DD, YYYY');
         var dayofweek = dayjs().format('dddd');
         currentDay.text(rightNow + " " + dayofweek);
       }
