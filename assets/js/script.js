@@ -1,9 +1,3 @@
-
-
-// get city name from user input
-// get state from user input?
-
-
 const searchButton = $('#search-button');
 
 var searchInput = document.querySelector('#search-input');
@@ -13,10 +7,6 @@ var fivedayForecast = document.querySelector('#five-day-forecast');
 var currentHour = dayjs().format("H");
 var currentDay = $('#current-day');
 
-var city = '';
-var state = '';
-var lat = '';
-var lon = '';
 
 $(document).ready(function () {
 
@@ -83,7 +73,7 @@ $(document).ready(function () {
         // get city name from user input
         function getWeather() {
             // define response
-            var requestURLcity = 'https://api.openweathermap.org/geo/1.0/direct?q='+city+'&limit=5&appid=4111bc800396525093c9185f5d31c8cb'
+            var requestURLcity = 'https://api.openweathermap.org/geo/1.0/direct?q=' + city + '&limit=5&appid=4111bc800396525093c9185f5d31c8cb'
             // 'http://api.openweathermap.org/geo/1.0/zip?zip=searchInput&appid=4111bc800396525093c9185f5d31c8cb'
 
             fetch(requestURLcity)
@@ -100,33 +90,55 @@ $(document).ready(function () {
                     console.log(lat);
                     console.log(lon);
                     // use lat and lon to get weather data from weather api
-                    let requestURLcurrent = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=4111bc800396525093c9185f5d31c8cb`
+                    let requestURLcurrent = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=4111bc800396525093c9185f5d31c8cb&units=imperial`
                     fetch(requestURLcurrent)
                         .then(function (response) {
                             return response.json();
                         })
-                        .then (function(data){
+                        .then(function (data) {
                             // ------today's weather------
                             console.log(data);
+                            $("#current-weather").empty();
+                            // add li for city name, temp, wind, humidity, uv index
+                            var city = data.name;
+                            var icon = data.weather.icon;
+                            var temp = data.main.temp;
+                            var temp_min = data.main.temp_min;
+                            var temp_max = data.main.temp_max;
+                            var wind = data.wind.speed;
+                            var humidity = data.main.humidity;
+                            
+                            $("#current-weather").append("<li>" + "CITY NAME: " + city + "</li>");
+                            $("#current-weather").append("<li>" + "Temp: " + temp + " deg F" + "</li>");
+                            $("#current-weather").append("<li>" + "Temp Min: " + temp_min + " deg F" + "</li>");
+                            $("#current-weather").append("<li>" + "Temp Max: " + temp_max + " deg F" + "</li>");
+                            $("#current-weather").append("<li>" + "Windspeed: " + wind + " mph" + "</li>");
+                            $("#current-weather").append("<li>" + "Humidity: " + humidity + " %" + "</li>");
+
                         })
 
-                    let requestURL5day = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=4111bc800396525093c9185f5d31c8cb`
+                    let requestURL5day = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=4111bc800396525093c9185f5d31c8cb&units=imperial`
                     fetch(requestURL5day)
                         .then(function (response) {
                             return response.json();
                         })
-                        .then (function(data){
+                        .then(function (data) {
                             // ------five day forecast------
                             console.log(data);
+                                                
+                    // // assign data [4] to day 1 field
+                    // data[4].
+                    // // assign data [12] to day 2 field
+                    // data[12].
+                    // // assign data [20] to day 3 field
+                    // data[20].
+                    // // assign data [28] to day 4 field
+                    // data[28].
+                    // // assign data [36] to day 5 field
+                    // data[36].
+
                         })
-                    
-                    
-                    // assign data [4] to day 1 field
-                    // assign data [12] to day 2 field
-                    // assign data [20] to day 3 field
-                    // assign data [28] to day 4 field
-                    // assign data [36] to day 5 field
-                    
+
                 });
 
         }
