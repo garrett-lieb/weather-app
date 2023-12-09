@@ -101,14 +101,15 @@ $(document).ready(function () {
                             $("#current-weather").empty();
                             // add li for city name, temp, wind, humidity, uv index
                             var city = data.name;
-                            var icon = data.weather.icon;
+                            var condition = data.weather[0].description;
                             var temp = data.main.temp;
                             var temp_min = data.main.temp_min;
                             var temp_max = data.main.temp_max;
                             var wind = data.wind.speed;
                             var humidity = data.main.humidity;
                             
-                            $("#current-weather").append("<li>" + "CITY NAME: " + city + "</li>");
+                            $("#current-weather").append("<li>" + "City: " + city + "</li>");
+                            $("#current-weather").append("<li>" + "Condition: " + condition + "</li>");
                             $("#current-weather").append("<li>" + "Temp: " + temp + " deg F" + "</li>");
                             $("#current-weather").append("<li>" + "Temp Min: " + temp_min + " deg F" + "</li>");
                             $("#current-weather").append("<li>" + "Temp Max: " + temp_max + " deg F" + "</li>");
