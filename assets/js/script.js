@@ -96,11 +96,18 @@ $(document).ready(function () {
                             return response.json();
                         })
                         .then(function (data) {
-                            // ------today's weather------
                             console.log(data);
+
+                            // ------current weather icon------
+                            var iconcode = data.weather[0].icon;
+                            console.log(iconcode);
+                            var icon = "<img src='http://openweathermap.org/img/w/" + iconcode + ".png'>";
+
+                            // ------today's weather------
+                           function getCurrentWeather() {
+                            
                             $("#current-weather").empty();
                             var city = data.name;
-                            var icon = data.weather[0].icon;
                             var condition = data.weather[0].description;
                             var temp = data.main.temp;
                             var temp_min = data.main.temp_min;
@@ -115,7 +122,8 @@ $(document).ready(function () {
                             $("#current-weather").append("<li>" + "Temp Max: " + temp_max + " deg F" + "</li>");
                             $("#current-weather").append("<li>" + "Windspeed: " + wind + " mph" + "</li>");
                             $("#current-weather").append("<li>" + "Humidity: " + humidity + " %" + "</li>");
-
+                           }
+                           getCurrentWeather();
                         })
 
                     let requestURL5day = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=4111bc800396525093c9185f5d31c8cb&units=imperial`
@@ -133,28 +141,34 @@ $(document).ready(function () {
                             $("#day5").empty();                     
                     // assign data [4] to day 1 field
                     function getDay1() {
-                    var city1 = data.city.name
-                    var date1 = data.list[4].dt_txt;
-                    var condition1 = data.list[4].weather[0].description;
-                    var temp1 = data.list[4].main.temp;
-                    var temp_min1 = data.list[4].main.temp_min;
-                    var temp_max1 = data.list[4].main.temp_max;
-                    var wind1 = data.list[4].wind.speed;
-                    var humidity1 = data.list[4].main.humidity;
-                    $("#day1").append("<li>" + "City: " + city1 + "</li>");
-                    $("#day1").append("<li>" + "Date: " + date1 + "</li>");
-                    $("#day1").append("<li>" + "Condition: " + condition1 + "</li>");
-                    $("#day1").append("<li>" + "Temp: " + temp1 + " deg F" + "</li>");
-                    $("#day1").append("<li>" + "Temp Min: " + temp_min1 + " deg F" + "</li>");
-                    $("#day1").append("<li>" + "Temp Max: " + temp_max1 + " deg F" + "</li>");
-                    $("#day1").append("<li>" + "Windspeed: " + wind1 + " mph" + "</li>");
-                    $("#day1").append("<li>" + "Humidity: " + humidity1 + " %" + "</li>");
+                    var city = data.city.name
+                    var iconcode = data.list[4].weather[0].icon;
+                    console.log(iconcode);
+                    var icon = "<img src='http://openweathermap.org/img/w/" + iconcode + ".png'>";
+                    var date = data.list[4].dt_txt;
+                    var condition = data.list[4].weather[0].description;
+                    var temp = data.list[4].main.temp;
+                    var temp_min = data.list[4].main.temp_min;
+                    var temp_max = data.list[4].main.temp_max;
+                    var wind = data.list[4].wind.speed;
+                    var humidity = data.list[4].main.humidity;
+                    $("#day1").append("<li>" + "City: " + city + icon + "</li>");
+                    $("#day1").append("<li>" + "Date: " + date + "</li>");
+                    $("#day1").append("<li>" + "Condition: " + condition + "</li>");
+                    $("#day1").append("<li>" + "Temp: " + temp + " deg F" + "</li>");
+                    $("#day1").append("<li>" + "Temp Min: " + temp_min + " deg F" + "</li>");
+                    $("#day1").append("<li>" + "Temp Max: " + temp_max + " deg F" + "</li>");
+                    $("#day1").append("<li>" + "Windspeed: " + wind + " mph" + "</li>");
+                    $("#day1").append("<li>" + "Humidity: " + humidity + " %" + "</li>");
                     }
                     getDay1();
                     
                     // assign data [12] to day 2 field
                     function getDay2() {
                     var city = data.city.name
+                    var iconcode = data.list[12].weather[0].icon;
+                    console.log(iconcode);
+                    var icon = "<img src='http://openweathermap.org/img/w/" + iconcode + ".png'>";
                     var date = data.list[12].dt_txt;
                     var condition = data.list[12].weather[0].description;
                     var temp = data.list[12].main.temp;
@@ -162,7 +176,7 @@ $(document).ready(function () {
                     var temp_max = data.list[12].main.temp_max;
                     var wind = data.list[12].wind.speed;
                     var humidity = data.list[12].main.humidity;
-                    $("#day2").append("<li>" + "City: " + city + "</li>");
+                    $("#day2").append("<li>" + "City: " + city + icon + "</li>");
                     $("#day2").append("<li>" + "Date: " + date + "</li>");
                     $("#day2").append("<li>" + "Condition: " + condition + "</li>");
                     $("#day2").append("<li>" + "Temp: " + temp + " deg F" + "</li>");
@@ -176,6 +190,9 @@ $(document).ready(function () {
                     // // assign data [20] to day 3 field
                     function getDay3() {
                     var city = data.city.name
+                    var iconcode = data.list[20].weather[0].icon;
+                    console.log(iconcode);
+                    var icon = "<img src='http://openweathermap.org/img/w/" + iconcode + ".png'>";
                     var date = data.list[20].dt_txt;
                     var condition = data.list[20].weather[0].description;
                     var temp = data.list[20].main.temp;
@@ -183,7 +200,7 @@ $(document).ready(function () {
                     var temp_max = data.list[20].main.temp_max;
                     var wind = data.list[20].wind.speed;
                     var humidity = data.list[20].main.humidity;
-                    $("#day3").append("<li>" + "City: " + city + "</li>");
+                    $("#day3").append("<li>" + "City: " + city + icon + "</li>");
                     $("#day3").append("<li>" + "Date: " + date + "</li>");
                     $("#day3").append("<li>" + "Condition: " + condition + "</li>");
                     $("#day3").append("<li>" + "Temp: " + temp + " deg F" + "</li>");
@@ -197,6 +214,9 @@ $(document).ready(function () {
                     // // assign data [28] to day 4 field
                     function getDay4() {
                     var city = data.city.name
+                    var iconcode = data.list[28].weather[0].icon;
+                    console.log(iconcode);
+                    var icon = "<img src='http://openweathermap.org/img/w/" + iconcode + ".png'>";
                     var date = data.list[28].dt_txt;
                     var condition = data.list[28].weather[0].description;
                     var temp = data.list[28].main.temp;
@@ -204,7 +224,7 @@ $(document).ready(function () {
                     var temp_max = data.list[28].main.temp_max;
                     var wind = data.list[28].wind.speed;
                     var humidity = data.list[28].main.humidity;
-                    $("#day4").append("<li>" + "City: " + city + "</li>");
+                    $("#day4").append("<li>" + "City: " + city + icon + "</li>");
                     $("#day4").append("<li>" + "Date: " + date + "</li>");
                     $("#day4").append("<li>" + "Condition: " + condition + "</li>");
                     $("#day4").append("<li>" + "Temp: " + temp + " deg F" + "</li>");
@@ -219,6 +239,9 @@ $(document).ready(function () {
                     // // assign data [36] to day 5 field
                     function getDay5() {
                     var city = data.city.name
+                    var iconcode = data.list[36].weather[0].icon;
+                    console.log(iconcode);
+                    var icon = "<img src='http://openweathermap.org/img/w/" + iconcode + ".png'>";
                     var date = data.list[36].dt_txt;
                     var condition = data.list[36].weather[0].description;
                     var temp = data.list[36].main.temp;
@@ -226,7 +249,7 @@ $(document).ready(function () {
                     var temp_max = data.list[36].main.temp_max;
                     var wind = data.list[36].wind.speed;
                     var humidity = data.list[36].main.humidity;
-                    $("#day5").append("<li>" + "City: " + city + "</li>");
+                    $("#day5").append("<li>" + "City: " + city + icon + "</li>");
                     $("#day5").append("<li>" + "Date: " + date + "</li>");
                     $("#day5").append("<li>" + "Condition: " + condition + "</li>");
                     $("#day5").append("<li>" + "Temp: " + temp + " deg F" + "</li>");
@@ -238,7 +261,6 @@ $(document).ready(function () {
                     }
                     getDay5();
 
-                    // data[36].
 
                         })
 
