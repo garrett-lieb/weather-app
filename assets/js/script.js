@@ -23,7 +23,7 @@ $(document).ready(function () {
     displayTime();
     setInterval(displayTime, 1000);
 
-
+    // display search history in list on page
     for (var i = 0; i < searcharray.length; i++) {
         var li = document.createElement("li");
         li.textContent = searcharray[i];
@@ -39,6 +39,7 @@ $(document).ready(function () {
             textContent = $(this).text();
             console.log(textContent);
             searchInput.value = textContent;
+            $(searchButton).trigger("click");
         });
     }
     console.log(searcharray);
