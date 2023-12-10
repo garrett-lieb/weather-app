@@ -157,6 +157,7 @@ $(document).ready(function () {
                     var temp_max = data.list[4].main.temp_max;
                     var wind = data.list[4].wind.speed;
                     var humidity = data.list[4].main.humidity;
+
                     $("#day1").append("<li>" + "City: " + city + icon + "</li>");
                     $("#day1").append("<li>" + "Date: " + date + "</li>");
                     $("#day1").append("<li>" + "Condition: " + condition + "</li>");
@@ -181,6 +182,7 @@ $(document).ready(function () {
                     var temp_max = data.list[12].main.temp_max;
                     var wind = data.list[12].wind.speed;
                     var humidity = data.list[12].main.humidity;
+
                     $("#day2").append("<li>" + "City: " + city + icon + "</li>");
                     $("#day2").append("<li>" + "Date: " + date + "</li>");
                     $("#day2").append("<li>" + "Condition: " + condition + "</li>");
@@ -205,6 +207,7 @@ $(document).ready(function () {
                     var temp_max = data.list[20].main.temp_max;
                     var wind = data.list[20].wind.speed;
                     var humidity = data.list[20].main.humidity;
+
                     $("#day3").append("<li>" + "City: " + city + icon + "</li>");
                     $("#day3").append("<li>" + "Date: " + date + "</li>");
                     $("#day3").append("<li>" + "Condition: " + condition + "</li>");
@@ -229,6 +232,7 @@ $(document).ready(function () {
                     var temp_max = data.list[28].main.temp_max;
                     var wind = data.list[28].wind.speed;
                     var humidity = data.list[28].main.humidity;
+
                     $("#day4").append("<li>" + "City: " + city + icon + "</li>");
                     $("#day4").append("<li>" + "Date: " + date + "</li>");
                     $("#day4").append("<li>" + "Condition: " + condition + "</li>");
@@ -254,6 +258,7 @@ $(document).ready(function () {
                     var temp_max = data.list[36].main.temp_max;
                     var wind = data.list[36].wind.speed;
                     var humidity = data.list[36].main.humidity;
+                    
                     $("#day5").append("<li>" + "City: " + city + icon + "</li>");
                     $("#day5").append("<li>" + "Date: " + date + "</li>");
                     $("#day5").append("<li>" + "Condition: " + condition + "</li>");
