@@ -81,7 +81,6 @@ $(document).ready(function () {
         function getWeather() {
             // define response
             var requestURLcity = 'https://api.openweathermap.org/geo/1.0/direct?q=' + city + '&limit=5&appid=4111bc800396525093c9185f5d31c8cb'
-            // 'http://api.openweathermap.org/geo/1.0/zip?zip=searchInput&appid=4111bc800396525093c9185f5d31c8cb'
 
             fetch(requestURLcity)
                 .then(function (response) {
@@ -105,16 +104,15 @@ $(document).ready(function () {
                         .then(function (data) {
                             console.log(data);
 
+                            // ------today's weather------
+                           function getCurrentWeather() {
+                            $("#current-weather").empty();
+                            var city = data.name;
                             // ------current weather icon------
                             var iconcode = data.weather[0].icon;
                             console.log(iconcode);
                             var icon = "<img src='http://openweathermap.org/img/w/" + iconcode + ".png'>";
-
-                            // ------today's weather------
-                           function getCurrentWeather() {
-                            
-                            $("#current-weather").empty();
-                            var city = data.name;
+                            // ------current weather data------
                             var condition = data.weather[0].description;
                             var temp = data.main.temp;
                             var temp_min = data.main.temp_min;
