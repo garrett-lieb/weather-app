@@ -154,22 +154,22 @@ $(document).ready(function () {
                     
                     // assign data [12] to day 2 field
                     function getDay2() {
-                    var city2 = data.city.name
-                    var date2 = data.list[12].dt_txt;
-                    var condition2 = data.list[12].weather[0].description;
-                    var temp2 = data.list[12].main.temp;
-                    var temp_min2 = data.list[12].main.temp_min;
-                    var temp_max2 = data.list[12].main.temp_max;
-                    var wind2 = data.list[12].wind.speed;
-                    var humidity2 = data.list[12].main.humidity;
-                    $("#day2").append("<li>" + "City: " + city2 + "</li>");
-                    $("#day2").append("<li>" + "Date: " + date2 + "</li>");
-                    $("#day2").append("<li>" + "Condition: " + condition2 + "</li>");
-                    $("#day2").append("<li>" + "Temp: " + temp2 + " deg F" + "</li>");
-                    $("#day2").append("<li>" + "Temp Min: " + temp_min2 + " deg F" + "</li>");
-                    $("#day2").append("<li>" + "Temp Max: " + temp_max2 + " deg F" + "</li>");
-                    $("#day2").append("<li>" + "Windspeed: " + wind2 + " mph" + "</li>");
-                    $("#day2").append("<li>" + "Humidity: " + humidity2 + " %" + "</li>");
+                    var city = data.city.name
+                    var date = data.list[12].dt_txt;
+                    var condition = data.list[12].weather[0].description;
+                    var temp = data.list[12].main.temp;
+                    var temp_min = data.list[12].main.temp_min;
+                    var temp_max = data.list[12].main.temp_max;
+                    var wind = data.list[12].wind.speed;
+                    var humidity = data.list[12].main.humidity;
+                    $("#day2").append("<li>" + "City: " + city + "</li>");
+                    $("#day2").append("<li>" + "Date: " + date + "</li>");
+                    $("#day2").append("<li>" + "Condition: " + condition + "</li>");
+                    $("#day2").append("<li>" + "Temp: " + temp + " deg F" + "</li>");
+                    $("#day2").append("<li>" + "Temp Min: " + temp_min + " deg F" + "</li>");
+                    $("#day2").append("<li>" + "Temp Max: " + temp_max + " deg F" + "</li>");
+                    $("#day2").append("<li>" + "Windspeed: " + wind + " mph" + "</li>");
+                    $("#day2").append("<li>" + "Humidity: " + humidity + " %" + "</li>");
                     }
                     getDay2();
 
@@ -237,7 +237,7 @@ $(document).ready(function () {
 
                     }
                     getDay5();
-                    
+
                     // data[36].
 
                         })
