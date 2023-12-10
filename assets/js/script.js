@@ -68,6 +68,13 @@ $(document).ready(function () {
             li.style.borderRadius = "5px";
             li.style.textAlign = "center";
             li.style.boxShadow = "5px 5px 10px grey";
+            // when the user clicks on a city in search history, search for that city
+            $(li).on("click", function () {
+                textContent = $(this).text();
+                console.log(textContent);
+                searchInput.value = textContent;
+                $(searchButton).trigger("click");
+            });
         }
 
         // get city name from user input
