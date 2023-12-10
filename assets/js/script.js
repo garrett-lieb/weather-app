@@ -14,6 +14,7 @@ $(document).ready(function () {
     var searcharray = JSON.parse(localStorage.getItem("searcharray")) || [];
     searchHistory.innerHTML = JSON.parse(localStorage.getItem("searchHistory")) || []
 
+
     function displayTime() {
         var rightNow = dayjs().format('hh:mm A MMM DD, YYYY');
         var dayofweek = dayjs().format('dddd');
@@ -258,7 +259,7 @@ $(document).ready(function () {
                     var temp_max = data.list[36].main.temp_max;
                     var wind = data.list[36].wind.speed;
                     var humidity = data.list[36].main.humidity;
-                    
+
                     $("#day5").append("<li>" + "City: " + city + icon + "</li>");
                     $("#day5").append("<li>" + "Date: " + date + "</li>");
                     $("#day5").append("<li>" + "Condition: " + condition + "</li>");
