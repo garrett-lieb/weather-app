@@ -10,9 +10,9 @@ Recently searched cities can be clicked on to search again in the list to the le
 
 Additionally, the page shows the current day and time. 
 
-<img src="./assets/readme-images/1.png" width="100%" height="100%">
-<img src="./assets/readme-images/2.png" width="100%" height="100%">
-<img src="./assets/readme-images/3.png" width="100%" height="100%">
+<img src="assets/images/1.png" width="100%" height="100%">
+<img src="assets/images/2.png" width="100%" height="100%">
+<img src="assets/images/3.png" width="100%" height="100%">
 
 Deployed Page: https://garrett-lieb.github.io/weather-app/
 
