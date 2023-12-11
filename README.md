@@ -29,7 +29,7 @@ The user can search for weather by a city name entered in the Search field by cl
 
 ## Credits
 
-N/A
+script.js lines 101-141 were completed during tutoring session with Andrew Hardemon on Friday Dec 8, 2023.
 
 ## Liscence
 
