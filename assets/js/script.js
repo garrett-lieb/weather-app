@@ -164,8 +164,6 @@ $(document).ready(function () {
                     $("#day1").append("<li>" + "Date: " + date + "</li>");
                     $("#day1").append("<li>" + "Condition: " + condition + "</li>");
                     $("#day1").append("<li>" + "Temp: " + temp + " deg F" + "</li>");
-                    $("#day1").append("<li>" + "Temp Min: " + temp_min + " deg F" + "</li>");
-                    $("#day1").append("<li>" + "Temp Max: " + temp_max + " deg F" + "</li>");
                     $("#day1").append("<li>" + "Windspeed: " + wind + " mph" + "</li>");
                     $("#day1").append("<li>" + "Humidity: " + humidity + " %" + "</li>");
                     }
@@ -180,8 +178,8 @@ $(document).ready(function () {
                     var date = data.list[12].dt_txt;
                     var condition = data.list[12].weather[0].description;
                     var temp = data.list[12].main.temp;
-                    var temp_min = data.list[12].main.temp_min;
-                    var temp_max = data.list[12].main.temp_max;
+                    // var temp_min = data.list[12].main.temp_min;
+                    // var temp_max = data.list[12].main.temp_max;
                     var wind = data.list[12].wind.speed;
                     var humidity = data.list[12].main.humidity;
 
@@ -189,8 +187,8 @@ $(document).ready(function () {
                     $("#day2").append("<li>" + "Date: " + date + "</li>");
                     $("#day2").append("<li>" + "Condition: " + condition + "</li>");
                     $("#day2").append("<li>" + "Temp: " + temp + " deg F" + "</li>");
-                    $("#day2").append("<li>" + "Temp Min: " + temp_min + " deg F" + "</li>");
-                    $("#day2").append("<li>" + "Temp Max: " + temp_max + " deg F" + "</li>");
+                    // $("#day2").append("<li>" + "Temp Min: " + temp_min + " deg F" + "</li>");
+                    // $("#day2").append("<li>" + "Temp Max: " + temp_max + " deg F" + "</li>");
                     $("#day2").append("<li>" + "Windspeed: " + wind + " mph" + "</li>");
                     $("#day2").append("<li>" + "Humidity: " + humidity + " %" + "</li>");
                     }
@@ -205,8 +203,8 @@ $(document).ready(function () {
                     var date = data.list[20].dt_txt;
                     var condition = data.list[20].weather[0].description;
                     var temp = data.list[20].main.temp;
-                    var temp_min = data.list[20].main.temp_min;
-                    var temp_max = data.list[20].main.temp_max;
+                    // var temp_min = data.list[20].main.temp_min;
+                    // var temp_max = data.list[20].main.temp_max;
                     var wind = data.list[20].wind.speed;
                     var humidity = data.list[20].main.humidity;
 
@@ -214,8 +212,8 @@ $(document).ready(function () {
                     $("#day3").append("<li>" + "Date: " + date + "</li>");
                     $("#day3").append("<li>" + "Condition: " + condition + "</li>");
                     $("#day3").append("<li>" + "Temp: " + temp + " deg F" + "</li>");
-                    $("#day3").append("<li>" + "Temp Min: " + temp_min + " deg F" + "</li>");
-                    $("#day3").append("<li>" + "Temp Max: " + temp_max + " deg F" + "</li>");
+                    // $("#day3").append("<li>" + "Temp Min: " + temp_min + " deg F" + "</li>");
+                    // $("#day3").append("<li>" + "Temp Max: " + temp_max + " deg F" + "</li>");
                     $("#day3").append("<li>" + "Windspeed: " + wind + " mph" + "</li>");
                     $("#day3").append("<li>" + "Humidity: " + humidity + " %" + "</li>");
                     }
@@ -230,8 +228,8 @@ $(document).ready(function () {
                     var date = data.list[28].dt_txt;
                     var condition = data.list[28].weather[0].description;
                     var temp = data.list[28].main.temp;
-                    var temp_min = data.list[28].main.temp_min;
-                    var temp_max = data.list[28].main.temp_max;
+                    // var temp_min = data.list[28].main.temp_min;
+                    // var temp_max = data.list[28].main.temp_max;
                     var wind = data.list[28].wind.speed;
                     var humidity = data.list[28].main.humidity;
 
@@ -239,8 +237,8 @@ $(document).ready(function () {
                     $("#day4").append("<li>" + "Date: " + date + "</li>");
                     $("#day4").append("<li>" + "Condition: " + condition + "</li>");
                     $("#day4").append("<li>" + "Temp: " + temp + " deg F" + "</li>");
-                    $("#day4").append("<li>" + "Temp Min: " + temp_min + " deg F" + "</li>");
-                    $("#day4").append("<li>" + "Temp Max: " + temp_max + " deg F" + "</li>");
+                    // $("#day4").append("<li>" + "Temp Min: " + temp_min + " deg F" + "</li>");
+                    // $("#day4").append("<li>" + "Temp Max: " + temp_max + " deg F" + "</li>");
                     $("#day4").append("<li>" + "Windspeed: " + wind + " mph" + "</li>");
                     $("#day4").append("<li>" + "Humidity: " + humidity + " %" + "</li>");
 
@@ -256,8 +254,8 @@ $(document).ready(function () {
                     var date = data.list[36].dt_txt;
                     var condition = data.list[36].weather[0].description;
                     var temp = data.list[36].main.temp;
-                    var temp_min = data.list[36].main.temp_min;
-                    var temp_max = data.list[36].main.temp_max;
+                    // var temp_min = data.list[36].main.temp_min;
+                    // var temp_max = data.list[36].main.temp_max;
                     var wind = data.list[36].wind.speed;
                     var humidity = data.list[36].main.humidity;
 
@@ -265,8 +263,8 @@ $(document).ready(function () {
                     $("#day5").append("<li>" + "Date: " + date + "</li>");
                     $("#day5").append("<li>" + "Condition: " + condition + "</li>");
                     $("#day5").append("<li>" + "Temp: " + temp + " deg F" + "</li>");
-                    $("#day5").append("<li>" + "Temp Min: " + temp_min + " deg F" + "</li>");
-                    $("#day5").append("<li>" + "Temp Max: " + temp_max + " deg F" + "</li>");
+                    // $("#day5").append("<li>" + "Temp Min: " + temp_min + " deg F" + "</li>");
+                    // $("#day5").append("<li>" + "Temp Max: " + temp_max + " deg F" + "</li>");
                     $("#day5").append("<li>" + "Windspeed: " + wind + " mph" + "</li>");
                     $("#day5").append("<li>" + "Humidity: " + humidity + " %" + "</li>");
 
